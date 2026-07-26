@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users Table</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f4f7fb;
+        color: #1f2937;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 24px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        padding: 12px 16px;
+        border-bottom: 1px solid #e5e7eb;
+        text-align: left;
+      }
+
+      th {
+        background: #f9fafb;
+      }
+
+      .status-active {
+        color: #15803d;
+        font-weight: 600;
+      }
+
+      .status-inactive {
+        color: #b91c1c;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Users</h1>
+      <p id="statusMessage">Loading users...</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="usersTableBody"></tbody>
+      </table>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

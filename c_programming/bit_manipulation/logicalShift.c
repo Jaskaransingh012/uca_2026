@@ -10,8 +10,8 @@
 int logicalShift(int x, int n) {
 
     int shifted_x = x >> n;
-  return shifted_x & ((1<<(32 +(~n +1))) -1);
-
+    int mask = ~(((1 << 31) >> n) << 1);
+    return shifted_x & mask;
 }
 
 int main() {

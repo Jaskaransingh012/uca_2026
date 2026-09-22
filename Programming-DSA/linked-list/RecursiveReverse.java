@@ -36,20 +36,30 @@ public class RecursiveReverse {
         System.out.println("null");
     }
 
-    public static void main(String[] args) {
+    ublic static Node findIntersection(Node head1, Node head2) {
 
-        Node head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
+        Node dummy = new Node(0);
+        Node current = dummy;
 
-        System.out.println("Original List:");
-        printList(head);
+        Node p1 = head1;
+        Node p2 = head2;
 
-        head = reverseRecursive(head);
+        while (p1 != null && p2 != null) {
+            if (p1.data == p2.data) {
 
-        System.out.println("Reversed List:");
-        printList(head);
+                current.next = new Node(p1.data);
+                current = current.next;
+
+                p1 = p1.next;
+                p2 = p2.next;
+            } else if (p1.data < p2.data) {
+                p1 = p1.next;
+            } else {
+                p2 = p2.next;
+            }
+        }
+
+        return dummy.next;
     }
 
 

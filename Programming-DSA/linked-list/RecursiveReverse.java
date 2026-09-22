@@ -62,5 +62,41 @@ public class RecursiveReverse {
         return dummy.next;
     }
 
+        public static boolean isSubList(Node list1, Node list2) {
+
+        if (list1 == null) {
+            return true;
+        }
+
+        if (list2 == null) {
+            return false;
+        }
+
+        Node ptr2 = list2;
+
+
+        while (ptr2 != null) {
+
+            Node temp2 = ptr2;
+            Node temp1 = list1;
+
+            while (temp1 != null && temp2 != null) {
+                if (temp1.data == temp2.data) {
+                    temp1 = temp1.next;
+                    temp2 = temp2.next;
+                } else {
+                    break;
+                }
+            }
+
+            if (temp1 == null) {
+                return true;
+            }
+
+            ptr2 = ptr2.next;
+        }
+
+        return false;
+    }
 
 }
